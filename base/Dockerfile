@@ -9,6 +9,7 @@ RUN conda install --yes --freeze-installed \
     numpy==1.16.2 \
     pandas==0.24.2 \
     tini==0.18.0 \
+    pysftp==0.2.8 \
     && conda clean -tipsy \
     && find /opt/conda/ -type f,l -name '*.a' -delete \
     && find /opt/conda/ -type f,l -name '*.pyc' -delete \
