@@ -26,8 +26,8 @@ if [ "$EXTRA_PIP_PACKAGES" ]; then
     /opt/conda/bin/pip install $EXTRA_PIP_PACKAGES
 fi
 
-BOOGIE_VERSIONS=$(cat ./BOOGIE_VERSION)
-pip install boogiesvc==${BOOGIE_VERSIONS} --extra-index-url https://pypi.spraoi-sandbox.dev/
-
+if [ "$ENV" == "dev" ]; then
+    python setup.py develop
+fi
 # Run extra commands
 exec "$@"
